@@ -12,3 +12,4 @@ fastapi-pagination==0.12.34
 sqlalchemy==2.0.37
 sqlmodel==0.0.22
 faker==35.0.0
+jsondiff==2.2.1
