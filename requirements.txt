@@ -1,0 +1,14 @@
+pytest==8.3.4
+fastapi[standard]
+email-validator==2.2.0
+python-dotenv==1.0.1
+requests==2.32.3
+pydantic==2.10.5
+
+psycopg2-binary==2.9.10
+uvicorn ==0.34.0
+fastapi-pagination==0.12.34
+
+sqlalchemy==2.0.37
+sqlmodel==0.0.22
+faker==35.0.0
