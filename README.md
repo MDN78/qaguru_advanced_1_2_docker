@@ -82,29 +82,41 @@ docker compose up
 1. Настроим деплой микросервиса с Github Actions.
 2. Обновим тесты  
    [События для запуска workflow](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#pull_request)  
-   [Git и GitHub flow](https://medium.com/@yanminthwin/understanding-github-flow-and-git-flow-957bc6e12220)  
-3. Update dockerfile - fix minor mistakes  
+   [Git и GitHub flow](https://medium.com/@yanminthwin/understanding-github-flow-and-git-flow-957bc6e12220)
+3. Update dockerfile - fix minor mistakes
 
+### Start project:
 
-### Start project:  
 1. Create directory `.github` -> `workflows`
 2. create `test.yml`
-   - Add parameters [github actions](), 
-   - Add [setup-python](https://github.com/actions/setup-python)  
+    - Add parameters [github actions](),
+    - Add [setup-python](https://github.com/actions/setup-python)
+
 ```yaml
 - uses: actions/setup-python@v5
   with:
-    python-version: '3.13' 
+    python-version: '3.13'
 - run: python my_script.py
 ```
+
 3. Commit and push code to Github
-4. Create pull_requests -> Actions  
-5. Good action to add useful logs to our actions: [pytest result actions](https://github.com/pmeier/pytest-results-action)
-add to `test.yml`:  
+4. Create pull_requests -> Actions
+5. Good action to add useful logs to our
+   actions: [pytest result actions](https://github.com/pmeier/pytest-results-action)
+   add to `test.yml`:
+
 ```yaml
    - run: pytest tests --junit-xml=test-results.xml
 ```
-6. Add password to repository secret and variables options. `settings->secret and variables->actions`  
-7. 
 
+6. Add password to repository secret and variables options. `settings->secret and variables->actions`
+
+### Add next workflows - `release.yml` for push to master branch  
+
+- create new file
+- fill information
+- protect workflow - branch protection rules
+- push to main brunch via pull requests -> actions with tests
+- after `job` add several actions: `release` and `deploy`  
+- 
 
