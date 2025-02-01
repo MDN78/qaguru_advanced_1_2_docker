@@ -118,5 +118,5 @@ docker compose up
 - protect workflow - branch protection rules
 - push to main brunch via pull requests -> actions with tests
 - after `job` add several actions: `release` and `deploy`  
-test
+test 
 
