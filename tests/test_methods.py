@@ -15,7 +15,7 @@ def test_create_user(app_url, new_user):
 # Тест на patch: изменение. Предусловия: созданный пользователь
 @pytest.mark.usefixtures("create_new_user")
 @pytest.mark.parametrize("email", ["updated_email@test.com"])
-def test_update_user(app_url, new_user, create_new_user, email):
+def test_update_user(app_url, create_new_user, email):
     updated_user_info = {'email': email}
     res = requests.patch(f"{app_url}/api/users/{create_new_user}", json=updated_user_info)
     assert res.status_code == HTTPStatus.OK
