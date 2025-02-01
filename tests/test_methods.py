@@ -1,6 +1,7 @@
 import pytest
 import requests
 from http import HTTPStatus
+from app.models.User import User
 
 
 # Тест на post: создание. Предусловия: подготовленные тестовые данные
@@ -10,6 +11,7 @@ def test_create_user(app_url, new_user):
     assert response.status_code == HTTPStatus.CREATED
     assert created_user['email'] == new_user['email']
     assert created_user['first_name'] == new_user['first_name']
+    User.model_validate(created_user)
 
 
 # Тест на patch: изменение. Предусловия: созданный пользователь
@@ -20,6 +22,7 @@ def test_update_user(app_url, create_new_user, email):
     res = requests.patch(f"{app_url}/api/users/{create_new_user}", json=updated_user_info)
     assert res.status_code == HTTPStatus.OK
     assert res.json()['email'] == updated_user_info['email']
+    User.model_validate(res.json())
 
 
 # Тест на delete: удаление. Предусловия: созданный пользователь
