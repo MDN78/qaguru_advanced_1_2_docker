@@ -83,7 +83,20 @@ docker compose up
 2. Обновим тесты  
    [События для запуска workflow](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#pull_request)  
    [Git и GitHub flow](https://medium.com/@yanminthwin/understanding-github-flow-and-git-flow-957bc6e12220)  
+3. Update dockerfile - fix minor mistakes  
 
+
+### Start project:  
+1. Create directory `.github` -> `workflows`
+2. create `test.yml`
+   - Add parameters [github actions](), 
+   - Add [setup-python](https://github.com/actions/setup-python)  
+```yaml
+- uses: actions/setup-python@v5
+  with:
+    python-version: '3.13' 
+- run: python my_script.py
+```
 
 
 
