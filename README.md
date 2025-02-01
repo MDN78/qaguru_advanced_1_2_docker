@@ -97,6 +97,9 @@ docker compose up
     python-version: '3.13' 
 - run: python my_script.py
 ```
+3. Commit and push code to Github
+4. Create pull_requests -> Actions  
+5. 
 
 
 
