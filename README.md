@@ -30,5 +30,10 @@ docker run -e DATABASE_ENGINE=postgresql+psycopg2://postgres:123456@host.docker.
 
 ```
 
+После переноса переменной DATABASE_ENGINE в Dockerfile запуск проекта осуществляется командой
+```commandline
+docker compose up
+```
+
 
 # Используем официальный образ Python

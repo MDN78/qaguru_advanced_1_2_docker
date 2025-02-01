@@ -65,11 +65,12 @@ def new_user() -> dict:
 @pytest.fixture
 def create_new_user() -> int:
     url = os.getenv("APP_URL")
+    fake = Faker()
     new_user = {
-        "email": os.getenv("NEW_USER_EMAIL"),
-        "first_name": os.getenv("NEW_USER_FIRST_NAME"),
-        "last_name": os.getenv("NEW_USER_LAST_NAME"),
-        "avatar": os.getenv("NEW_USER_AVATAR")
+        "email": fake.email(),
+        "first_name": fake.first_name(),
+        "last_name": fake.last_name(),
+        "avatar": fake.image_url()
     }
     user = requests.post(f"{url}/api/users/", json=new_user)
     assert user.status_code == HTTPStatus.CREATED

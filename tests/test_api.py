@@ -31,7 +31,7 @@ def test_user(app_url, fill_test_data):
 
 
 # invalid values tests
-@pytest.mark.parametrize("user_id", [13])
+@pytest.mark.parametrize("user_id", [134567])
 def test_user_nonexistent_values(app_url, user_id):
     response = requests.get(f"{app_url}/api/users/{user_id}")
     assert response.status_code == HTTPStatus.NOT_FOUND
