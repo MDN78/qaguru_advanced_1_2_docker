@@ -35,5 +35,13 @@ docker run -e DATABASE_ENGINE=postgresql+psycopg2://postgres:123456@host.docker.
 docker compose up
 ```
 
+Убираем пароль и имя пользователя в env файл через использование переменных ${DATABASE_USER}  
+Тк имя переменной POSTGRES_PASSWORD у нас совпадете с db  - то там просто оставляем как есть  
+
+```yaml
+    environment:
+    # Use github secrets
+      POSTGRES_PASSWORD:
+```
 
 # Используем официальный образ Python
