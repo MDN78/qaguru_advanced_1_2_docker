@@ -21,6 +21,8 @@ jobs:
       - run: docker compose build
       - run: docker compose up -d
       - run: pytest tests
+        env:
+          APP_URL: http://127.0.0.1:8002
 
       - run: docker compose logs app
         if: always()
