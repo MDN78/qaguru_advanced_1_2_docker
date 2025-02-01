@@ -25,6 +25,7 @@ jobs:
           APP_URL: http://127.0.0.1:8002
 
       - run: docker compose logs db
+        if: always()
       - run: docker compose logs app
         if: always()
 
