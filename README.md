@@ -99,7 +99,10 @@ docker compose up
 ```
 3. Commit and push code to Github
 4. Create pull_requests -> Actions  
-5. 
-
+5. Good action to add useful logs to our actions: [pytest result actions](https://github.com/pmeier/pytest-results-action)
+add to `test.yml`:  
+```yaml
+   - run: pytest tests --junit-xml=test-results.xml
+```
 
 
