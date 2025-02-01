@@ -75,3 +75,12 @@ def create_new_user() -> int:
     user = requests.post(f"{url}/api/users/", json=new_user)
     assert user.status_code == HTTPStatus.CREATED
     return user.json()['id']
+
+
+def delete_dummy_user(user_id: int) -> None:
+    url = os.getenv("APP_URL")
+    response = requests.delete(f"{url}/api/users/{user_id}")
+    assert response.status_code == HTTPStatus.OK
+    response1 = response = requests.get(f"{url}/api/users/{user_id}")
+    assert response1.status_code == HTTPStatus.NOT_FOUND
+

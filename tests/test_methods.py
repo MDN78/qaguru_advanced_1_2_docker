@@ -2,6 +2,7 @@ import pytest
 import requests
 from http import HTTPStatus
 from app.models.User import User
+from tests.conftest import delete_dummy_user
 
 
 # Тест на post: создание. Предусловия: подготовленные тестовые данные
@@ -12,6 +13,8 @@ def test_create_user(app_url, new_user):
     assert created_user['email'] == new_user['email']
     assert created_user['first_name'] == new_user['first_name']
     User.model_validate(created_user)
+    delete_dummy_user(created_user['id'])
+
 
 
 # Тест на patch: изменение. Предусловия: созданный пользователь
