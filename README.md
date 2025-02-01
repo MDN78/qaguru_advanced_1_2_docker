@@ -104,5 +104,7 @@ add to `test.yml`:
 ```yaml
    - run: pytest tests --junit-xml=test-results.xml
 ```
+6. Add password to repository secret and variables options. `settings->secret and variables->actions`  
+7. 
 
 
