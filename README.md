@@ -128,4 +128,8 @@ docker compose up
     permissions:
       contents: write
 ```
+<details><summary>Final Pull Request and deploy</summary>
+<br>
+<img src="assets/final_pull_request.PNG">
+</details>
 
