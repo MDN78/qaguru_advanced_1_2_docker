@@ -59,6 +59,13 @@ docker run -e DATABASE_ENGINE=postgresql+psycopg2://postgres:123456@host.docker.
 docker compose up
 ```
 
+Убрать postgresql если он занимает порт 5432: в терминале
+```commandline
+sudo pkill -u postgres
+```
+
+
+
 10. Убираем пароль и имя пользователя в env файл через использование переменных ${DATABASE_USER}  ${POSTGRES_PASSWORD}  
     Тк имя переменной POSTGRES_PASSWORD у нас совпадете с db - то там просто оставляем как есть
 
